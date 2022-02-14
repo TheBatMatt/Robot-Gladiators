@@ -8,18 +8,19 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Vampire Bot";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 15;
 
-// create function
-var fight = function() {
-    window.alert("Welcome to Robot Gladiators!")
-    console.log(promptFight);
+var fight = function(enemyName) {
+  window.alert("Welcome to Robot Gladiators!");
 };
+
+for(var i = 0; i < enemyNames.length; i++) {
+  console.log(enemyNames[i]);
+  console.log(i);
+  console.log(enemyNames[i] + " is at " + i + " index");
+}
 
   // Below Execute function
 fight();
@@ -45,10 +46,10 @@ console.log(
 
 // check enemy's health
 if (enemyHealth <= 0) {
-    window.alert(enemyName + " has fallen in the mechanical smackdown!");
+    window.alert( + " has fallen in the mechanical smackdown!");
   } 
   else {
-    window.alert(enemyName + " still has " + enemyHealth + " health left.");
+    window.alert( + " still has " + enemyHealth + " health left.");
   }
 
   // check player's health
@@ -68,50 +69,13 @@ if (playerHealth <= 0) {
       window.alert(playerName + " has decided to skip this fight. Goodbye!");
       // subtract money from playerMoney for skipping
       playerMoney = playerMoney - 2;
+      window.alert(playerName + " dropped 2 Money running. " + playerName + " now has " + playerMoney + " money.")
     }
     // if no (false), ask question again by running fight() again
     else {
-      fight();
-    }
+      for(var i = 0; i < enemyNames.length; i++) {
+        fight(enemyNames[i]);
+      }
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Note the lack of quotation marks around playerName
-//console.log(playerName);
-
-//console.log("This logs a string, good for leaving yourself a message");
-// this will do math and log 20
-//console.log(10 + 10);
-// what is this?
-//console.log("Our robot's name is " + playerName);
-
-// A function is a predefined action that we can call or invoke in our code (after we declare it earlier in the code). Fight is the name..
-
-//function fight() {
- //   window.alert ("The fight has begun!");
-//}
-
+}
 
